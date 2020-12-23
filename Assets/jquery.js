@@ -22,14 +22,22 @@ var _quoteButton = document.getElementById("#quoteBtn");
 // Services Box Containers in Grid - Going from Left to Right and Top to Bottom
 
 // Service Box 1
-  var _servicesGrid = document.getElementById("#servicesGrid");
-  var _serv1Key = document.getElementById("#serv1Key");
-  var _serv1Box = document.getElementById("#serv1Box");
-  var _serv1Img = document.getElementById("#serv1Img");
-  var _serv1Name = document.getElementById("#serv1Name");
-  var _serv1Desc = document.getElementById("#serv1Desc");
-  var _serv1Price = document.getElementById("#serv1Price");
-  var _serv1Comment = document.getElementById("#serv1Comment");
+  var _servicesGrid = document.getElementById("servicesGrid");
+  var _serv1Key = document.getElementById("serv1Key");
+  var _serv1Box = document.getElementById("serv1Box");
+  var _serv1Img = document.getElementById("serv1Img");
+  var _serv1Name = document.getElementById("serv1Name");
+  var _serv1Desc = document.getElementById("serv1Desc");
+  var _serv1Price = document.getElementById("serv1Price");
+  var _serv1Comment = document.getElementById("serv1Comment");
+ // Services Box 0
+  var _serv0Key = document.getElementById("serv0Key");
+  var _serv0Box = document.getElementById("serv0Box");
+  var _serv0Img = document.getElementById("serv0Img");
+  var _serv0Name = document.getElementById("serv0Name");
+  var _serv0Desc = document.getElementById("serv0Desc");
+  var _serv0Price = document.getElementById("serv0Price");
+  var _serv0Comment = document.getElementById("serv0Comment");
 
 // Set Service List Data
 var servicesDataList = [
@@ -38,7 +46,7 @@ var servicesDataList = [
     description:
       "Lets get your Logo to represent your company and your values. ",
     price: 100,
-    btnImage: ".sushi1.png",
+    btnImage: "sushi1.png",
     userComment: "",
     selected: false,
   },
@@ -47,7 +55,7 @@ var servicesDataList = [
     description:
       "We will customize your home page and make sure that its visually pleasing, and also captures the viewer. ",
     price: 100,
-    btnImage: ".sushi2.png",
+    btnImage: "sushi2.png",
     userComment: "",
     selected: false,
   },
@@ -56,7 +64,7 @@ var servicesDataList = [
     description:
       "We will help you design weekly Social Media Posts that will help draw in more followers and a broader audience. ",
     price: 100,
-    btnImage: ".sushi3.png",
+    btnImage: "sushi3.png",
     userComment: "",
     selected: false,
   },
@@ -65,7 +73,7 @@ var servicesDataList = [
     description:
       "Do your photos look bland, and unprofessional? Lets spruce them up! ",
     price: 100,
-    btnImage: ".sushi4.png",
+    btnImage: "sushi4.png",
     userComment: "",
     selected: false,
   },
@@ -74,7 +82,7 @@ var servicesDataList = [
     description:
       "We will help create a cohesive theme that will stretch across all your platforms. ",
     price: 100,
-    btnImage: ".sushi1.png",
+    btnImage: "sushi5.png",
     userComment: "",
     selected: false,
   },
@@ -83,7 +91,7 @@ var servicesDataList = [
     description:
       "Want to have insight on what you competitors and the marker is currently doing? Then this is for you!",
     price: 100,
-    btnImage: ".sushi2.png",
+    btnImage: "sushi6.png",
     userComment: "",
     selected: false,
   },
@@ -92,7 +100,7 @@ var servicesDataList = [
     description:
       "Keep these on hand so you will never miss an opportunity to get your name out there!",
     price: 100,
-    btnImage: ".sushi3.png",
+    btnImage: "sushi7.png",
     userComment: "",
     selected: false,
   },
@@ -101,10 +109,20 @@ var servicesDataList = [
     description:
       "We will interview your customers, send them surveys and then create a testimonial so you can show your prospective prospect.",
     price: 100,
-    btnImage: ".sushi3.png",
+    btnImage: "sushi8.png",
     userComment: "",
     selected: false,
   },
+  {
+    serviceName: "Vision and Mission Statements",
+    description:
+      "If you don't have a vision your business is blind. Let us help you get clarity on what you want to do.",
+    price: 100,
+    btnImage: "sushi1.png",
+    userComment: "",
+    selected: false,
+  },
+  
 ];
 
 // Quote Adding Mechanism
@@ -132,9 +150,9 @@ var quotePrice = 0;
 function initialize(){
   console.log("This is the initialize Function - hey hey!")
   renderServiceGrid();
-  reviewBuilder();
-  setLocalStorage();
-  getLocalStorage();
+  // reviewBuilder();
+  // setLocalStorage();
+  // getLocalStorage();
 };
 
 initialize();
@@ -142,19 +160,56 @@ initialize();
 
 //Function Creates the Services Grid by Looping Services Array
 function renderServiceGrid(){
-  
-  // var row, col1, col2, col3, textArea, i;
-  
-  i = servicesDataList.key
+    var row, col1, col2, col3, textArea, j;
+    i = servicesDataList.key
   for (i = 0; i < servicesDataList.length; i++){
-    service = servicesDataList[i];
-    servicesDataList.serviceName = document.getElementById("#serv1Name"); 
-    console.log("This is the servicesGrid Function - hi!")
-    console.log(service);
-    console.log(service.serviceName);
-    _serv1Name = "m";
-  }
+    console.log([i]);
+    console.log("serv"+[i]+"Name", "serv"+[i]+"Key");
+    document.getElementById("serv"+[i]+"Key").textContent = " ID and Section Container = " + [i];
+    document.getElementById("serv"+[i]+"Name").textContent = servicesDataList[i].serviceName + " ID = " + [i]  ;
+    document.getElementById("serv"+[i]+"Desc").textContent = servicesDataList[i].description;
+    
+    document.getElementById("serv"+[i]+"Price").textContent = "$"+ servicesDataList[i].price;
+   document.getElementById("serv"+[i]+"Img").src="Assets/" + servicesDataList[i].btnImage;
+   // These are the clickable elements for each Service
+   
+   // Image Click to show Details
+   var servButton = document.getElementById("serv"+[i]+"Img");
+    servButton.addEventListener("click", function (e) {
+      showService();
+  });
+
+   // 'Tell Us' button Click to save a user's comments
+   var CommentBtn = document.getElementById("serv"+[i]+"CommentBtn");
+   CommentBtn.addEventListener("click", function (e) {
+    saveComment();
+  });
+
+   // Select service Checkbox to Select a Service
+   var servSelectBtn = document.getElementById("serv"+[i]+"Select");
+   servSelectBtn.addEventListener("click", function (e) {
+    serviceSelected();
+  });
+
+  };
 };
+// Function: Shows Details of Service
+function showService(e){
+  console.log("Show Service button clicked")
+
+};
+
+// Function: Saves User Comment 
+function saveComment(){
+  console.log("save Comment button CLicked")
+}
+// Function: Adds Service to "Selected Services"
+function serviceSelected(){
+  console.log("Select Service Checkbox checked.")
+}
+
+
+
 
 // Function that Takes Contact Info. Including Autocomplete API
 function getContact(){
@@ -186,8 +241,8 @@ function getLocalStorage(){
 };
 
 //Function That Allows for the Page to Load first
-// $(document).ready(function () {
-//   initialize();
-// });
+$(document).ready(function () {
+  initialize();
+});
 
 
