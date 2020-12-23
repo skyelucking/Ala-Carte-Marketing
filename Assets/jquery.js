@@ -186,8 +186,8 @@ function getLocalStorage(){
 };
 
 //Function That Allows for the Page to Load first
-// $(document).ready(function () {
-//   initialize();
-// });
+$(document).ready(function () {
+  initialize();
+});
 
 
