@@ -150,9 +150,9 @@ var quotePrice = 0;
 function initialize(){
   console.log("This is the initialize Function - hey hey!")
   renderServiceGrid();
-  reviewBuilder();
-  setLocalStorage();
-  getLocalStorage();
+  // reviewBuilder();
+  // setLocalStorage();
+  // getLocalStorage();
 };
 
 initialize();
@@ -164,15 +164,52 @@ function renderServiceGrid(){
     i = servicesDataList.key
   for (i = 0; i < servicesDataList.length; i++){
     console.log([i]);
-    console.log("serv"+[i]+"Name");
-    document.getElementById("serv"+[i]+"Name").textContent = servicesDataList[i].serviceName;
+    console.log("serv"+[i]+"Name", "serv"+[i]+"Key");
+    document.getElementById("serv"+[i]+"Key").textContent = " ID and Section Container = " + [i];
+    document.getElementById("serv"+[i]+"Name").textContent = servicesDataList[i].serviceName + " ID = " + [i]  ;
     document.getElementById("serv"+[i]+"Desc").textContent = servicesDataList[i].description;
-    document.getElementById("serv"+[i]+"Key").textContent = servicesDataList[i].key;
+    
     document.getElementById("serv"+[i]+"Price").textContent = "$"+ servicesDataList[i].price;
    document.getElementById("serv"+[i]+"Img").src="Assets/" + servicesDataList[i].btnImage;
-  
-  }
+   // These are the clickable elements for each Service
+   
+   // Image Click to show Details
+   var servButton = document.getElementById("serv"+[i]+"Img");
+    servButton.addEventListener("click", function (e) {
+      showService();
+  });
+
+   // 'Tell Us' button Click to save a user's comments
+   var CommentBtn = document.getElementById("serv"+[i]+"CommentBtn");
+   CommentBtn.addEventListener("click", function (e) {
+    saveComment();
+  });
+
+   // Select service Checkbox to Select a Service
+   var servSelectBtn = document.getElementById("serv"+[i]+"Select");
+   servSelectBtn.addEventListener("click", function (e) {
+    serviceSelected();
+  });
+
+  };
 };
+// Function: Shows Details of Service
+function showService(e){
+  console.log("Show Service button clicked")
+
+};
+
+// Function: Saves User Comment 
+function saveComment(){
+  console.log("save Comment button CLicked")
+}
+// Function: Adds Service to "Selected Services"
+function serviceSelected(){
+  console.log("Select Service Checkbox checked.")
+}
+
+
+
 
 // Function that Takes Contact Info. Including Autocomplete API
 function getContact(){
