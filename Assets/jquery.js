@@ -12,9 +12,6 @@
   var contactEmailText = document.getElementById("#contactEmail");
   var contactZipText = document.getElementById("#contactZip");
   var contactPhoneText = document.getElementById("#contactPhone");
-//Drop Down will be populated by API
-  var businessCategoryText = document.getElementById("#businessCategory");
-  var serviceIndex = 0;
 
 // Services Survey Elements
 var _quoteButton = document.getElementById("#quoteBtn");
@@ -38,6 +35,9 @@ var _quoteButton = document.getElementById("#quoteBtn");
   var _serv0Desc = document.getElementById("serv0Desc");
   var _serv0Price = document.getElementById("serv0Price");
   var _serv0Comment = document.getElementById("serv0Comment");
+
+// Set Services Local Storage
+var selectedServiceList = [];
 
 // Set Service List Data
 var servicesDataList = [
@@ -128,55 +128,38 @@ var servicesDataList = [
 // Quote Adding Mechanism
 var quotePrice = 0;
 
-// Example Service Container
-{
-  /* 
-  <div class="col-4 float-left p-8" id="serv1Box" class="servBox">
-  <img src="Assets/sushi1.png" alt="" id="serv1Img" class="servImg" >
-  
-  <span id="serv1Key" class="servKey">Service Key</span> <br>
-  
-  <span id="serv1Name" class="servName">Service Name</span> <br>
-  
-   <div id="serv1DetailsBox" class="container serveDetailsBox" style="visibility: visible; background-color: rgb(124, 122, 122);">
-  <span id="serv1Desc" class="servDesc" >Service Desc</span><br>
-  <span id="serv1Price" class="servPrice">Service Price</span><br>
-   <input type="textarea" id="serv1Comment" placeholder="Service User Comment" class="servComment"></input> <br>
-   Select Service <input id="serv1Select" type="checkbox" class="servSelect"> </input> 
-</div></div> */
-}
 
 //Function That Initializes All Processes
 function initialize(){
   console.log("This is the initialize Function - hey hey!")
   renderServiceGrid();
-  // reviewBuilder();
-  // setLocalStorage();
-  // getLocalStorage();
+  reviewBuilder();
+  setLocalStorage();
+  getLocalStorage();
 };
 
-initialize();
 
 
 //Function Creates the Services Grid by Looping Services Array
 function renderServiceGrid(){
-    var row, col1, col2, col3, textArea, j;
-    i = servicesDataList.key
+   i = servicesDataList.key
   for (i = 0; i < servicesDataList.length; i++){
-    console.log([i]);
-    console.log("serv"+[i]+"Name", "serv"+[i]+"Key");
+   //Service Details
     document.getElementById("serv"+[i]+"Key").textContent = " ID and Section Container = " + [i];
-    document.getElementById("serv"+[i]+"Name").textContent = servicesDataList[i].serviceName + " ID = " + [i]  ;
+    document.getElementById("serv"+[i]+"Name").textContent = servicesDataList[i].serviceName ;
     document.getElementById("serv"+[i]+"Desc").textContent = servicesDataList[i].description;
-    
     document.getElementById("serv"+[i]+"Price").textContent = "$"+ servicesDataList[i].price;
-   document.getElementById("serv"+[i]+"Img").src="Assets/" + servicesDataList[i].btnImage;
-   // These are the clickable elements for each Service
-   
+    document.getElementById("serv"+[i]+"Img").src="Assets/" + servicesDataList[i].btnImage;
+      
    // Image Click to show Details
    var servButton = document.getElementById("serv"+[i]+"Img");
-    servButton.addEventListener("click", function (e) {
-      showService();
+    servButton.addEventListener("click", function () {
+      var id = $(this).attr("key");
+      console.log(id);
+      console.log("serv"+ [id] +"DetailsBox");
+    var _servDetails = servicesDataList[i];
+    console.log(servicesDataList);
+    document.getElementById("serv0DetailsBox").style.visibility = 'visible';
   });
 
    // 'Tell Us' button Click to save a user's comments
@@ -191,7 +174,8 @@ function renderServiceGrid(){
     serviceSelected();
   });
 
-  };
+  };console.log(servicesDataList);
+
 };
 // Function: Shows Details of Service
 function showService(e){
@@ -207,8 +191,6 @@ function saveComment(){
 function serviceSelected(){
   console.log("Select Service Checkbox checked.")
 }
-
-
 
 
 // Function that Takes Contact Info. Including Autocomplete API
