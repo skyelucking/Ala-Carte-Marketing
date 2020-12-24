@@ -153,26 +153,31 @@ function renderServiceGrid(){
       
    // Image Click to show Details
    var servButton = document.getElementById("serv"+[i]+"Img");
+
+   (function(i){
     servButton.addEventListener("click", function () {
-      var id = $(this).attr("key");
-      console.log(id);
-      console.log("serv"+ [id] +"DetailsBox");
-    var _servDetails = servicesDataList[i];
-    console.log(servicesDataList);
-    document.getElementById("serv0DetailsBox").style.visibility = 'visible';
-  });
+      console.log("serv"+ [i] +"DetailsBox");
+       var _servDetails = servicesDataList[i];
+       console.log(servicesDataList);
+       document.getElementById("serv"+ [i] +"DetailsBox").style.visibility = 'visible';
+     });
+      // 'Tell Us' button Click to save a user's comments
+      var CommentBtn = document.getElementById("serv"+[i]+"CommentBtn");
+        CommentBtn.addEventListener("click", function (e) {
+          console.log("commentBtn " + [i]);
 
-   // 'Tell Us' button Click to save a user's comments
-   var CommentBtn = document.getElementById("serv"+[i]+"CommentBtn");
-   CommentBtn.addEventListener("click", function (e) {
-    saveComment();
-  });
-
-   // Select service Checkbox to Select a Service
-   var servSelectBtn = document.getElementById("serv"+[i]+"Select");
-   servSelectBtn.addEventListener("click", function (e) {
-    serviceSelected();
-  });
+        });
+        // Select service Checkbox to Select a Service
+        var servSelectBtn = document.getElementById("serv"+[i]+"Select");
+          servSelectBtn.addEventListener("click", function (e) {
+            console.log("serverSelectBtn",[i])
+          });
+   })(i);
+    
+  
+   
+   
+   
 
   };console.log(servicesDataList);
 
