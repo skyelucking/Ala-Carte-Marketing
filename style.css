@@ -1,0 +1,29 @@
+body {
+    background-color: #fef5cc;
+    text-align: center;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
+
+
+#eatAllyouCan {
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#market {
+ font-size: 200px;
+ text-align: center;
+font-weight: bolder;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#comingSoon {
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
