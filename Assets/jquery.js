@@ -7,6 +7,7 @@
 // put the function that kicks off the app inside it
 
 // Contact Form Elements
+var _hideBtn = document.querySelector(".hideBtn")
   var contactButton = document.getElementById("#contactBtn");
   var contactNameText = document.getElementById("#contactName");
   var contactEmailText = document.getElementById("#contactEmail");
@@ -139,13 +140,12 @@ function initialize(){
 };
 
 
-
 //Function Creates the Services Grid by Looping Services Array
 function renderServiceGrid(){
    i = servicesDataList.key
   for (i = 0; i < servicesDataList.length; i++){
    //Service Details
-    document.getElementById("serv"+[i]+"Key").textContent = " ID and Section Container = " + [i];
+     document.getElementById("serv"+[i]+"Key").textContent = " ID and Section Container = " + [i];
     document.getElementById("serv"+[i]+"Name").textContent = servicesDataList[i].serviceName ;
     document.getElementById("serv"+[i]+"Desc").textContent = servicesDataList[i].description;
     document.getElementById("serv"+[i]+"Price").textContent = "$"+ servicesDataList[i].price;
@@ -154,34 +154,46 @@ function renderServiceGrid(){
    // Image Click to show Details
    var servButton = document.getElementById("serv"+[i]+"Img");
 
+   //This is an  'immediately invoked function' which helps retain the i variable and pass it along with in the loop//
    (function(i){
+// This button makes the details of the service visible
     servButton.addEventListener("click", function () {
       console.log("serv"+ [i] +"DetailsBox");
        var _servDetails = servicesDataList[i];
        console.log(servicesDataList);
+       if (document.getElementById("serv"+ [i] +"DetailsBox").style.visibility = 'hidden'){
        document.getElementById("serv"+ [i] +"DetailsBox").style.visibility = 'visible';
-     });
-      // 'Tell Us' button Click to save a user's comments
+       }
+       
+      });
+       
+// 'Tell Us' button Click to save a user's comments
       var CommentBtn = document.getElementById("serv"+[i]+"CommentBtn");
         CommentBtn.addEventListener("click", function (e) {
           console.log("commentBtn " + [i]);
+          servicesDataList[i].userComment = document.getElementById("serv"+[i]+"Comment").value;
+          console.log("comment: ",document.getElementById("serv"+[i]+"Comment").value );
+          console.log("tell us button pushed!")
+          console.log(servicesDataList[i].userComment)
 
         });
-        // Select service Checkbox to Select a Service
+// Select service Checkbox to Select a Service
         var servSelectBtn = document.getElementById("serv"+[i]+"Select");
-          servSelectBtn.addEventListener("click", function (e) {
-            console.log("serverSelectBtn",[i])
-          });
+        servSelectBtn.addEventListener("click", function (e) {
+          var boxChecked = document.getElementById("serv"+[i]+"Select").checked;
+          console.log(boxChecked);
+          servicesDataList[i].selected = boxChecked;
+          console.log(servicesDataList[i].serviceName + " " + servicesDataList[i].selected + " " + servicesDataList[i].userComment)
+             
+          }, );
    })(i);
     
-  
-   
-   
-   
 
-  };console.log(servicesDataList);
+  };
+  console.log(servicesDataList);
 
 };
+
 // Function: Shows Details of Service
 function showService(e){
   console.log("Show Service button clicked")
