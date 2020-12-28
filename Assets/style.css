@@ -28,6 +28,34 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.hideBtn{
+    align-self: center;
+    align-content: center;
+    color: black;
+    padding: 1px;
+    border: 5px;
+    border-color: black;
+    border-style: double;
+    max-width: 4em;
+    background-color: rgb(253, 253, 253);
+    font-weight: bolder;
+    
+}
+
+
+.contactInput {
+    width: 20em;
+    margin: 5px;
+}
+
+.textarea {
+    line-height: 4;
+}
+
+.servKey{
+    visibility: hidden;
+
+}
 .servBox{
 
 }
@@ -41,6 +69,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .serveDetailsBox{
+    
 
 }
 
@@ -58,4 +87,10 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 
 .servSelect{
     
+}
+.getQuoteBox{
+    padding: 5px;
+    border: 5px;
+    border-color: black;
+    border-style: dotted;
 }
