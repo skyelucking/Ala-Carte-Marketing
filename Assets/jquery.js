@@ -6,13 +6,21 @@
 // 3) Last should be functional invocations or if using $(document).ready(function() { ... }),
 // put the function that kicks off the app inside it
 
+//City Search Elements
+var $searchInput = $("#search_input");
+var $latitudeInput = $("#latitude_input");
+var $longitudeInput = $("#longitude_input");
+var longData = "";
+var latData = "";
+
 // Contact Form Elements
-var _hideBtn = document.querySelector(".hideBtn")
-  var contactButton = document.getElementById("#contactBtn");
-  var contactNameText = document.getElementById("#contactName");
-  var contactEmailText = document.getElementById("#contactEmail");
-  var contactZipText = document.getElementById("#contactZip");
-  var contactPhoneText = document.getElementById("#contactPhone");
+var _hideBtn = document.querySelector(".hideBtn");
+var contactButton = document.getElementById("#contactBtn");
+var contactNameText = document.getElementById("#contactName");
+var contactEmailText = document.getElementById("#contactEmail");
+var contactStreetText = document.getElementById("#contactStreet");
+var contactZipText = document.getElementById("#contactZip");
+var contactPhoneText = document.getElementById("#contactPhone");
 
 // Services Survey Elements
 var _quoteButton = document.getElementById("#quoteBtn");
@@ -20,22 +28,8 @@ var _quoteButton = document.getElementById("#quoteBtn");
 // Services Box Containers in Grid - Going from Left to Right and Top to Bottom
 
 // Service Box 1
-  var _servicesGrid = document.getElementById("servicesGrid");
-  var _serv1Key = document.getElementById("serv1Key");
-  var _serv1Box = document.getElementById("serv1Box");
-  var _serv1Img = document.getElementById("serv1Img");
-  var _serv1Name = document.getElementById("serv1Name");
-  var _serv1Desc = document.getElementById("serv1Desc");
-  var _serv1Price = document.getElementById("serv1Price");
-  var _serv1Comment = document.getElementById("serv1Comment");
- // Services Box 0
-  var _serv0Key = document.getElementById("serv0Key");
-  var _serv0Box = document.getElementById("serv0Box");
-  var _serv0Img = document.getElementById("serv0Img");
-  var _serv0Name = document.getElementById("serv0Name");
-  var _serv0Desc = document.getElementById("serv0Desc");
-  var _serv0Price = document.getElementById("serv0Price");
-  var _serv0Comment = document.getElementById("serv0Comment");
+var _servicesGrid = document.getElementById("servicesGrid");
+
 
 // Set Services Local Storage
 var selectedServiceList = [];
@@ -123,125 +117,149 @@ var servicesDataList = [
     userComment: "",
     selected: false,
   },
-  
 ];
 
 // Quote Adding Mechanism
 var quotePrice = 0;
 
+function initGoogleMaps() {
+  var autocomplete;
+  autocomplete = new google.maps.places.Autocomplete(
+    document.getElementById("search_input"),
+    { types: ["geocode"] }
+  );
+  google.maps.event.addListener(autocomplete, "place_changed", function () {
+    var near_place = autocomplete.getPlace();
+    console.log(near_place);
+    $latitudeInput.value = near_place.geometry.location.lat();
+    cityName = near_place.address_components[0].short_name;
+  });
+}
 
 //Function That Initializes All Processes
-function initialize(){
-  console.log("This is the initialize Function - hey hey!")
+function initialize() {
+  console.log("This is the initialize Function - hey hey!");
   renderServiceGrid();
   reviewBuilder();
   setLocalStorage();
   getLocalStorage();
-};
-
+  initGoogleMaps();
+}
 
 //Function Creates the Services Grid by Looping Services Array
-function renderServiceGrid(){
-   i = servicesDataList.key
-  for (i = 0; i < servicesDataList.length; i++){
-   //Service Details
-     document.getElementById("serv"+[i]+"Key").textContent = " ID and Section Container = " + [i];
-    document.getElementById("serv"+[i]+"Name").textContent = servicesDataList[i].serviceName ;
-    document.getElementById("serv"+[i]+"Desc").textContent = servicesDataList[i].description;
-    document.getElementById("serv"+[i]+"Price").textContent = "$"+ servicesDataList[i].price;
-    document.getElementById("serv"+[i]+"Img").src="Assets/" + servicesDataList[i].btnImage;
-      
-   // Image Click to show Details
-   var servButton = document.getElementById("serv"+[i]+"Img");
+function renderServiceGrid() {
+  i = servicesDataList.key;
+  for (i = 0; i < servicesDataList.length; i++) {
+    //Service Details
+    // document.getElementById("serv"+[i]+"Key").textContent = " ID and Section Container = " + [i];
+    document.getElementById("serv" + [i] + "Name").textContent =
+      servicesDataList[i].serviceName;
+    document.getElementById("serv" + [i] + "Desc").textContent =
+      servicesDataList[i].description;
+    document.getElementById("serv" + [i] + "Price").textContent =
+      "$" + servicesDataList[i].price;
+    document.getElementById("serv" + [i] + "Img").src =
+      "Assets/" + servicesDataList[i].btnImage;
 
-   //This is an  'immediately invoked function' which helps retain the i variable and pass it along with in the loop//
-   (function(i){
-// This button makes the details of the service visible
-    servButton.addEventListener("click", function () {
-      console.log("serv"+ [i] +"DetailsBox");
-       var _servDetails = servicesDataList[i];
-       console.log(servicesDataList);
-       if (document.getElementById("serv"+ [i] +"DetailsBox").style.visibility = 'hidden'){
-       document.getElementById("serv"+ [i] +"DetailsBox").style.visibility = 'visible';
-       }
-       
+    // Image Click to show Details
+    var servButton = document.getElementById("serv" + [i] + "Img");
+
+    //This is an  'immediately invoked function' which helps retain the i variable and pass it along with in the loop//
+    (function (i) {
+      // This button makes the details of the service visible
+      servButton.addEventListener("click", function () {
+        console.log("serv" + [i] + "DetailsBox");
+        var _servDetails = servicesDataList[i];
+        //  console.log(servicesDataList);
+        if (
+          (document.getElementById(
+            "serv" + [i] + "DetailsBox"
+          ).style.visibility = "hidden")
+        ) {
+          document.getElementById(
+            "serv" + [i] + "DetailsBox"
+          ).style.visibility = "visible";
+        }
       });
-       
-// 'Tell Us' button Click to save a user's comments
-      var CommentBtn = document.getElementById("serv"+[i]+"CommentBtn");
-        CommentBtn.addEventListener("click", function (e) {
-          console.log("commentBtn " + [i]);
-          servicesDataList[i].userComment = document.getElementById("serv"+[i]+"Comment").value;
-          console.log("comment: ",document.getElementById("serv"+[i]+"Comment").value );
-          console.log("tell us button pushed!")
-          console.log(servicesDataList[i].userComment)
 
-        });
-// Select service Checkbox to Select a Service
-        var servSelectBtn = document.getElementById("serv"+[i]+"Select");
-        servSelectBtn.addEventListener("click", function (e) {
-          var boxChecked = document.getElementById("serv"+[i]+"Select").checked;
-          console.log(boxChecked);
-          servicesDataList[i].selected = boxChecked;
-          console.log(servicesDataList[i].serviceName + " " + servicesDataList[i].selected + " " + servicesDataList[i].userComment)
-             
-          }, );
-   })(i);
-    
-
-  };
+      // 'Tell Us' button Click to save a user's comments
+      var CommentBtn = document.getElementById("serv" + [i] + "CommentBtn");
+      CommentBtn.addEventListener("click", function (e) {
+        console.log("commentBtn " + [i]);
+        servicesDataList[i].userComment = document.getElementById(
+          "serv" + [i] + "Comment"
+        ).value;
+        console.log(
+          "comment: ",
+          document.getElementById("serv" + [i] + "Comment").value
+        );
+        console.log("tell us button pushed!");
+        console.log(servicesDataList[i].userComment);
+      });
+      // Select service Checkbox to Select a Service
+      var servSelectBtn = document.getElementById("serv" + [i] + "Select");
+      servSelectBtn.addEventListener("click", function (e) {
+        var boxChecked = document.getElementById("serv" + [i] + "Select")
+          .checked;
+        console.log(boxChecked);
+        servicesDataList[i].selected = boxChecked;
+        console.log(
+          servicesDataList[i].serviceName +
+            " " +
+            servicesDataList[i].selected +
+            " " +
+            servicesDataList[i].userComment
+        );
+      });
+    })(i);
+  }
   console.log(servicesDataList);
-
-};
+}
 
 // Function: Shows Details of Service
-function showService(e){
-  console.log("Show Service button clicked")
+function showService(e) {
+  console.log("Show Service button clicked");
+}
 
-};
-
-// Function: Saves User Comment 
-function saveComment(){
-  console.log("save Comment button CLicked")
+// Function: Saves User Comment
+function saveComment() {
+  console.log("save Comment button CLicked");
 }
 // Function: Adds Service to "Selected Services"
-function serviceSelected(){
-  console.log("Select Service Checkbox checked.")
+function serviceSelected() {
+  console.log("Select Service Checkbox checked.");
 }
 
-
 // Function that Takes Contact Info. Including Autocomplete API
-function getContact(){
-  console.log("This is the getContact Function - hi!")
-};
+function getContact() {
+  console.log("This is the getContact Function - hi!");
+}
 
 //Function That Adds Up the Selected Services for a Quote
-function buildQuote(){
-  console.log("This is the buildQuote Function - hola!")
-};;
+function buildQuote() {
+  console.log("This is the buildQuote Function - hola!");
+}
 
 //Perhaps a QR Builder Function with QR Monkey API?
-function makeQRcode(){
-  console.log("This is the QR Builder Function - how YOU doin?!")
-};;
+function makeQRcode() {
+  console.log("This is the QR Builder Function - how YOU doin?!");
+}
 
 //Function that renders the reviews
-function reviewBuilder(){
-  console.log("This is the reviewBuilder Function - What's the good word?")
-};;
+function reviewBuilder() {
+  console.log("This is the reviewBuilder Function - What's the good word?");
+}
 
 //Function that Saves to Local Storage
-function setLocalStorage(){
-  console.log("This is the setLocalStorage Function - WHATSUUUUP?")
-};
+function setLocalStorage() {
+  console.log("This is the setLocalStorage Function - WHATSUUUUP?");
+}
 
-function getLocalStorage(){
-  console.log("This is the getLocalStorage Function - YO YO YO!")
-};
+function getLocalStorage() {
+  console.log("This is the getLocalStorage Function - YO YO YO!");
+}
 
 //Function That Allows for the Page to Load first
 $(document).ready(function () {
   initialize();
 });
-
-

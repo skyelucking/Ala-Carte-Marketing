@@ -41,6 +41,21 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
     
 }
+
+
+.contactInput {
+    width: 20em;
+    margin: 5px;
+}
+
+.textarea {
+    line-height: 4;
+}
+
+.servKey{
+    visibility: hidden;
+
+}
 .servBox{
 
 }
@@ -72,4 +87,10 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 
 .servSelect{
     
+}
+.getQuoteBox{
+    padding: 5px;
+    border: 5px;
+    border-color: black;
+    border-style: dotted;
 }

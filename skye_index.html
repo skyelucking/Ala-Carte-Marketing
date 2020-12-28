@@ -6,15 +6,6 @@
   <!-- <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" /> -->
   <link rel="stylesheet" href="Assets/style.css">
  
- 
-
-
-
-
-
-
-
-
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
   
@@ -23,11 +14,7 @@
 </head>
 
 <body>
-
-
-
  
-     
 
   <!-- Top Nav Menu -->
   <div class="Header">
@@ -43,12 +30,13 @@
   </div>
     <!-- Start of Services Grid -->
   <div class="container-lg clearfix" id="servicesGrid" style="visibility: visible;">
-    <div class="col-12 float-left  p-8">
+    <row class="row">
+    <div class="col-12 p-8">
     </div>
    
   <body class="container-lg clearfix"> 
     <!-- Service 0 Container -->
-    <div class="col-4 float-left p-8" id="serv0Box" class="servBox">
+    <div class="col-4 p-8" id="serv0Box" class="servBox">
       <img src="Assets/sushi1.png" alt="" id="serv0Img" class="servImg" ><br>
       <div id="serv0Key" class="servKey">Service Key - 0</div> <br>
        <div id="serv0Name" class="servName">Service Name</div> <br>
@@ -62,7 +50,7 @@
     </div></div>
 
     <!-- Service 1 Container -->
-<div class="col-4 float-left p-8" id="serv1Box" class="servBox">
+<div class="col-4 -8" id="serv1Box" class="servBox">
   <img src="Assets/sushi1.png" alt="" id="serv1Img" class="servImg" ><br>
   <div id="serv1Key" class="servKey">Service Key</div> <br>
    <div id="serv1Name" class="servName">Service Name</div> <br>
@@ -74,11 +62,11 @@
    <br>Tell us a bit about this...<br>
    <input type="textarea" id="serv1Comment" placeholder="Service User Comment" class="servComment"></input><button id="serv1CommentBtn">Tell us! </button> <br>
    Select Service <input id="serv1Select" type="checkbox" class="servSelect"> </input> 
-   <div class="hideBtn">Hide</div>
+   <!-- <div class="hideBtn">Hide</div> -->
 </div></div>
 
 <!-- Service 2 Container -->
-<div class="col-4 float-left p-8" id="serv2Box" class="servBox">
+<div class="col-4 -8" id="serv2Box" class="servBox">
   <img src="Assets/sushi2.png" alt="" id="serv2Img" class="servImg" ><br>
   <span id="serv2Key" class="servKey">Service Key</span> <br>
    <div id="serv2Name" class="servName">Service Name</div> <br>
@@ -92,12 +80,12 @@
 </div></div>
 
 <!-- Service 3 Container -->
-<div class="col-4 float-left p-8" id="serv3Box" class="servBox">
+<div class="col-4 -8" id="serv3Box" class="servBox">
   <img src="Assets/sushi3.png" alt="" id="serv3Img" class="servImg" ><br>
   <span id="serv3Key" class="servKey">Service Key</span> <br>
    <div id="serv3Name" class="servName">Service Name</div> <br>
   
-   <div id="serv3DetailsBox" class="container serveDetailsBox" style="visibility: visible; background-color: rgb(224, 222, 222);">
+   <div id="serv3DetailsBox" class="container serveDetailsBox" style="visibility: hidden; background-color: rgb(224, 222, 222);">
     <span id="serv3Desc" class="servDesc" >Service Desc</span><br>
    
    <span id="serv3Price" class="servPrice">Service Price</span> <br>Tell us a bit about this...<br>
@@ -105,25 +93,29 @@
    Select Service <input id="serv3Select" type="checkbox" class="servSelect"> </input> 
 </div></div>
 <!-- Service 4 Container -->
-<div class="col-4 float-left p-8" id="serv4Box" class="servBox">
+<div class="col-4 -8" id="serv4Box" class="servBox">
   <img src="Assets/sushi4.png" alt="" id="serv4Img" class="servImg" ><br>
   <span id="serv4Key" class="servKey">Service Key</span> <br>
    <div id="serv4Name" class="servName">Service Name</div> <br>
   
-   <div id="serv4DetailsBox" class="container serveDetailsBox" style="visibility: visible; background-color: rgb(224, 222, 222);">
+   <div id="serv4DetailsBox" class="container serveDetailsBox" style="visibility: hidden; background-color: rgb(224, 222, 222);">
     <span id="serv4Desc" class="servDesc" >Service Desc</span><br>
    
    <span id="serv4Price" class="servPrice">Service Price</span> <br>Tell us a bit about this...<br>
    <input type="textarea" id="serv4Comment" placeholder="Service User Comment" class="servComment"></input><button id="serv4CommentBtn">Tell us! </button>  <br>
    Select Service <input id="serv4Select" type="checkbox" class="servSelect"> </input> 
 </div></div>
+
+
+
+
 <!-- Service 5 Container -->
-<div class="col-4 float-left p-8" id="serv5Box" class="servBox">
+<div class="col-4 -8" id="serv5Box" class="servBox">
   <img src="Assets/sushi4.png" alt="" id="serv5Img" class="servImg" ><br>
   <span id="serv5Key" class="servKey">Service Key</span> <br>
    <div id="serv5Name" class="servName">Service Name</div> <br>
   
-   <div id="serv5DetailsBox" class="container serveDetailsBox" style="visibility: visible; background-color: rgb(224, 222, 222);">
+   <div id="serv5DetailsBox" class="container serveDetailsBox" style="visibility: hidden; background-color: rgb(224, 222, 222);">
     <span id="serv5Desc" class="servDesc" >Service Desc</span><br>
    
    <span id="serv5Price" class="servPrice">Service Price</span> <br>Tell us a bit about this...<br>
@@ -132,12 +124,12 @@
 </div></div>
 
 <!-- Service 6 Container -->
-<div class="col-4 float-left p-8" id="serv6Box" class="servBox">
+<div class="col-4 -8" id="serv6Box" class="servBox">
   <img src="Assets/sushi4.png" alt="" id="serv6Img" class="servImg" ><br>
   <span id="serv6Key" class="servKey">Service Key</span> <br>
    <div id="serv6Name" class="servName">Service Name</div> <br>
   
-   <div id="serv6DetailsBox" class="container serveDetailsBox" style="visibility: visible; background-color: rgb(224, 222, 222);">
+   <div id="serv6DetailsBox" class="container serveDetailsBox" style="visibility: hidden; background-color: rgb(224, 222, 222);">
     <span id="serv6Desc" class="servDesc" >Service Desc</span><br>
    
    <span id="serv6Price" class="servPrice">Service Price</span> <br>Tell us a bit about this...<br>
@@ -146,12 +138,12 @@
 </div></div>
 
 <!-- Service 7 Container -->
-<div class="col-4 float-left p-8" id="serv7Box" class="servBox">
+<div class="col-4 -8" id="serv7Box" class="servBox">
   <img src="Assets/sushi4.png" alt="" id="serv7Img" class="servImg" ><br>
   <span id="serv7Key" class="servKey">Service Key</span> <br>
    <div id="serv7Name" class="servName">Service Name</div> <br>
   
-   <div id="serv7DetailsBox" class="container serveDetailsBox" style="visibility: visible; background-color: rgb(224, 222, 222);">
+   <div id="serv7DetailsBox" class="container serveDetailsBox" style="visibility: hidden; background-color: rgb(224, 222, 222);">
     <span id="serv7Desc" class="servDesc" >Service Desc</span><br>
    
    <span id="serv7Price" class="servPrice">Service Price</span> <br>Tell us a bit about this...<br>
@@ -159,36 +151,66 @@
    Select Service <input id="serv7Select" type="checkbox" class="servSelect"> </input> 
 </div></div>
 <!-- Service 8 Container -->
-<div class="col-4 float-left p-8" id="serv8Box" class="servBox">
+<div class="col-4 -8" id="serv8Box" class="servBox">
   <img src="Assets/sushi4.png" alt="" id="serv8Img" class="servImg" ><br>
   <span id="serv8Key" class="servKey">Service Key</span> <br>
    <div id="serv8Name" class="servName">Service Name</div> <br>
   
-   <div id="serv8DetailsBox" class="container serveDetailsBox" style="visibility: visible; background-color: rgb(224, 222, 222);">
+   <div id="serv8DetailsBox" class="container serveDetailsBox" style="visibility: hidden; background-color: rgb(224, 222, 222);">
     <span id="serv8Desc" class="servDesc" >Service Desc</span><br>
    
    <span id="serv8Price" class="servPrice">Service Price</span> <br>Tell us a bit about this...<br>
    <input type="textarea" id="serv8Comment" placeholder="Service User Comment" class="servComment"></input><button id="serv8CommentBtn">Tell us! </button>  <br>
    Select Service <input id="serv8Select" type="checkbox" class="servSelect"> </input> 
 </div></div>
+</div>
+
+<!-- Get Quote Container -->
+<div class="container-lg clearfix" style="align-content: center;">
+<div class="col-12 " id="getQuoteBox" class="getQuoteBox">
+  <img src="Assets/getAQuote.png" alt="" id="getQuoteImg" class="getQoteImg" ><br>
+   
+  
+   <div id="contactInfoBox" class="container getQuoteBox" style="visibility: visible; background-color: rgb(255, 251, 251);">
+    <span id="getQuoteDesc" class="getQuoteDesc" ><p>Select The Items to Order Up your Marketing Ala Carte!</p> We'll put together an initial quote on the next page after getting a little information about you...</span><br>
+    <div>Name: <input id="contactName" class="contactInput"> </input>
+    </div>
+    <div>Email: <input id="contactEmail" class="contactInput"> </input>
+    </div>
+    <div>Phone:<input id="contactPhone" class="contactInput"> </input>
+    </div>
+    <div>Street:<input id="contactStreet" class="contactInput"> </input>
+    </div>
+    <!-- <div class="form-group"> -->
+      <div>City: <input type="text" class="contactInput" id="search_input" placeholder="">
+      <input type="hidden" id="latitude_input" />
+    <input type="hidden" id="longitude_input" /></div>
+
+    <div>Zip:<input id="contactZip" class="contactInput"> </input>
+    </div>
+  
+   <div>Additional Comments: <br><input type="textarea" id="getQuoteComment" placeholder="" class="getQuoteComment textarea contactInput" ></input></div> <div> <button id="contactBtn">GET QUOTE! </button> </div>
+</div>
+</div>
+</div>
 
    
 
   <div class="container-lg clearfix">
   
   
-    <div class="col-12 float-left p-3" id="eatAllyouCan">EAT ALL YOU CAN
+    <div class="col-12 -3" id="eatAllyouCan">EAT ALL YOU CAN
 
     </div>
   </div>
   <div class="container-lg clearfix" id="market">
-    <div class="col-12 float-left p-6">MARKET
+    <div class="col-12 -6">MARKET
 
     </div>
   </div>
 
  <div class="container-lg clearfix" id="comingSoon">
-    <div class="col-12 float-left p-3">COMING SOON
+    <div class="col-12 -3">COMING SOON
 
     </div>
   </div>
@@ -209,9 +231,17 @@
     <link rel="stylesheet" id="style" href="Assets/style.css" />
     <title>Work Day Scheduler</title>
     
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA5iZSuKAK0n-F7XktBgeLMAeY69bLd2Ls"> </script> 
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="Assets/jquery.js"></script>
+   
     </body>
 </html>
