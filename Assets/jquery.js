@@ -7,29 +7,29 @@
 // put the function that kicks off the app inside it
 
 //City Search Elements
-var $searchInput = $("#search_input");
+var $searchInput = $("#contactCi");
 var $latitudeInput = $("#latitude_input");
 var $longitudeInput = $("#longitude_input");
 var longData = "";
 var latData = "";
 
 // Contact Form Elements
-var _hideBtn = document.querySelector(".hideBtn");
-var contactButton = document.getElementById("#contactBtn");
-var contactNameText = document.getElementById("#contactName");
-var contactEmailText = document.getElementById("#contactEmail");
-var contactStreetText = document.getElementById("#contactStreet");
-var contactZipText = document.getElementById("#contactZip");
-var contactPhoneText = document.getElementById("#contactPhone");
+var customerInfoList = {
+  _contactFName: "",
+  _contactLName: "",
+  _contactEmail: "",
+  _contactPhone: "",
+  _contactStreet: "",
+  _contactZip: "",
+  _contactLat: "",
+  _contactLong: "",
+  _contactCity: "",
+  _contactQuoteComment: "",
+  
+};
 
-// Services Survey Elements
-var _quoteButton = document.getElementById("#quoteBtn");
 
-// Services Box Containers in Grid - Going from Left to Right and Top to Bottom
-
-// Service Box 1
-var _servicesGrid = document.getElementById("servicesGrid");
-
+// var _servicesGrid = document.getElementById("servicesGrid");
 
 // Set Services Local Storage
 var selectedServiceList = [];
@@ -43,7 +43,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi1.png",
     userComment: "",
-    selected: false,
+    selected: "",
   },
   {
     serviceName: "Landing Page",
@@ -52,7 +52,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi2.png",
     userComment: "",
-    selected: false,
+    selected: "",
   },
   {
     serviceName: "Weekly Posts",
@@ -61,7 +61,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi3.png",
     userComment: "",
-    selected: false,
+    selected: "",
   },
   {
     serviceName: "Photo Editing and Design",
@@ -70,7 +70,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi4.png",
     userComment: "",
-    selected: false,
+    selected: "",
   },
   {
     serviceName: "Aesthetic Design",
@@ -79,7 +79,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi5.png",
     userComment: "",
-    selected: false,
+    selected: "",
   },
   {
     serviceName: "Competitive Advantage",
@@ -88,7 +88,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi6.png",
     userComment: "",
-    selected: false,
+    selected: "",
   },
   {
     serviceName: "Business Cards",
@@ -97,7 +97,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi7.png",
     userComment: "",
-    selected: false,
+    selected: "",
   },
   {
     serviceName: "Creating Testimonials",
@@ -106,7 +106,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi8.png",
     userComment: "",
-    selected: false,
+    selected: "",
   },
   {
     serviceName: "Vision and Mission Statements",
@@ -115,7 +115,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi1.png",
     userComment: "",
-    selected: false,
+    selected: "",
   },
 ];
 
@@ -125,25 +125,27 @@ var quotePrice = 0;
 function initGoogleMaps() {
   var autocomplete;
   autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById("search_input"),
+    document.getElementById("contactCity"),
     { types: ["geocode"] }
   );
   google.maps.event.addListener(autocomplete, "place_changed", function () {
     var near_place = autocomplete.getPlace();
     console.log(near_place);
     $latitudeInput.value = near_place.geometry.location.lat();
+    customerInfoList._contactLat = near_place.geometry.location.lat();
+    customerInfoList._contactLong = near_place.geometry.location.lng();
     cityName = near_place.address_components[0].short_name;
   });
 }
 
 //Function That Initializes All Processes
 function initialize() {
-  console.log("This is the initialize Function - hey hey!");
-  renderServiceGrid();
-  reviewBuilder();
-  setLocalStorage();
+   renderServiceGrid();
+   initGoogleMaps();
+  // reviewBuilder();
+  saveToLocalStorage();
   getLocalStorage();
-  initGoogleMaps();
+ 
 }
 
 //Function Creates the Services Grid by Looping Services Array
@@ -195,6 +197,7 @@ function renderServiceGrid() {
         );
         console.log("tell us button pushed!");
         console.log(servicesDataList[i].userComment);
+        localStorage.setItem("servicesInfoStored", JSON.stringify(servicesDataList));
       });
       // Select service Checkbox to Select a Service
       var servSelectBtn = document.getElementById("serv" + [i] + "Select");
@@ -203,6 +206,7 @@ function renderServiceGrid() {
           .checked;
         console.log(boxChecked);
         servicesDataList[i].selected = boxChecked;
+        localStorage.setItem("servicesInfoStored", JSON.stringify(servicesDataList));
         console.log(
           servicesDataList[i].serviceName +
             " " +
@@ -210,53 +214,57 @@ function renderServiceGrid() {
             " " +
             servicesDataList[i].userComment
         );
+        
       });
     })(i);
   }
-  console.log(servicesDataList);
+  // console.log(servicesDataList);
 }
 
-// Function: Shows Details of Service
-function showService(e) {
-  console.log("Show Service button clicked");
-}
-
-// Function: Saves User Comment
-function saveComment() {
-  console.log("save Comment button CLicked");
-}
-// Function: Adds Service to "Selected Services"
-function serviceSelected() {
-  console.log("Select Service Checkbox checked.");
-}
-
-// Function that Takes Contact Info. Including Autocomplete API
-function getContact() {
-  console.log("This is the getContact Function - hi!");
-}
-
-//Function That Adds Up the Selected Services for a Quote
-function buildQuote() {
-  console.log("This is the buildQuote Function - hola!");
-}
-
-//Perhaps a QR Builder Function with QR Monkey API?
-function makeQRcode() {
-  console.log("This is the QR Builder Function - how YOU doin?!");
-}
-
-//Function that renders the reviews
-function reviewBuilder() {
-  console.log("This is the reviewBuilder Function - What's the good word?");
-}
+// Get Quote Function
+var getQuoteBtn = document.getElementById("getQuoteBtn");
+getQuoteBtn.addEventListener("click", function () {
+  var customer = customerInfoList;
+  customerInfoList._contactFName = document.getElementById(
+    "contactFName"
+  ).value;
+  customerInfoList._contactLName = document.getElementById(
+    "contactLName"
+  ).value;
+  customerInfoList._contactEmail = document.getElementById(
+    "contactEmail"
+  ).value;
+  customerInfoList._contactPhone = document.getElementById(
+    "contactPhone"
+  ).value;
+  customerInfoList._contactStreet = document.getElementById(
+    "contactStreet"
+  ).value;
+  customerInfoList._contactCity = document.getElementById(
+    "contactCity"
+  ).value;
+  customerInfoList._contactZip = document.getElementById("contactZip").value;
+  customerInfoList._contactCity = document.getElementById("contactCity").value;
+  customerInfoList._contactQuoteComment = document.getElementById(
+    "getQuoteComment"
+  ).value;
+  saveToLocalStorage();
+});
 
 //Function that Saves to Local Storage
-function setLocalStorage() {
-  console.log("This is the setLocalStorage Function - WHATSUUUUP?");
+function saveToLocalStorage() {
+  localStorage.setItem("servicesInfoStored", JSON.stringify(servicesDataList));
+  localStorage.setItem("customerInfoStored", JSON.stringify(customerInfoList));
 }
 
+//Function that Gets Local Storage
 function getLocalStorage() {
-  console.log("This is the getLocalStorage Function - YO YO YO!");
+  // Check if local storage (LS) key exists
+  if (localStorage.getItem("servicesInfoStored")) {
+    // Then retrieve the associated value from LS
+    servicesDataList = JSON.parse(localStorage.getItem("servicesInfoStored"));
+    console.log(servicesDataList);
+      }
 }
 
 //Function That Allows for the Page to Load first

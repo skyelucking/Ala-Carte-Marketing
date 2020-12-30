@@ -3,7 +3,7 @@ body {
     text-align: center;
     font-size: medium;
     font-family: 'Times New Roman', Times, serif;
-    color: red;
+    color: rgb(0, 0, 0);
 }
 
 
@@ -42,6 +42,12 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     
 }
 
+
+
+.contactNameInput {
+    width: 10em;
+    margin: 5px;
+}
 
 .contactInput {
     width: 20em;
@@ -88,9 +94,60 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 .servSelect{
     
 }
+
+/* Styles for the Quote Page */
+
+
 .getQuoteBox{
     padding: 5px;
     border: 5px;
     border-color: black;
     border-style: dotted;
+}
+
+.quoteContainer {
+    align-self: center;
+    width: 90%;
+    margin: 5px;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    background-color: rgb(172, 212, 27);
+}
+
+.quoteSheet {
+    align-self: center;
+    color: black;
+    width: 90%;
+    margin: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: rgb(11, 54, 40);
+}
+
+.quoteRow {
+    align-self: center;
+    color: rgb(253, 2, 2);
+    width: 100%;
+    margin: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: aquamarine;
+}
+
+.quoteCol {
+   
+    align-content: left;
+    color: rgb(10, 10, 10);
+    margin: 5px;
+    border-color: rgb(94, 7, 102);
+    border-style: solid;
+    border-right: 2px;
+    border-width: 5px;
+    background-color: rgb(243, 6, 6);
+}
+
+.quoteImg{
+    height: 3em;
+    visibility: visible;
 }
