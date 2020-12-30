@@ -13,80 +13,107 @@ var $longitudeInput = $("#longitude_input");
 var longData = "";
 var latData = "";
 
-// Contact Form Elements
-var customerInfoList = {
-  _contactFName: "",
-  _contactLName: "",
-  _contactEmail: "",
-  _contactPhone: "",
-  _contactStreet: "",
-  _contactZip: "",
-  _contactLat: "",
-  _contactLong: "",
-  _contactCity: "",
-  _contactQuoteComment: "",
-};
+//Final Quote Variable
+var finalQuote = 0;
+
+//Getting Services from Local Storage
 var servicesDataList = JSON.parse(localStorage.getItem("servicesInfoStored"));
-console.log(servicesDataList);
+// console.log(servicesDataList);
 
-// let selectedServices = [];
-// for (let i = 0; i < selectedServiceList.length; i++) {
-//     if (selectedServiceList[i].selected == 'false') {
-//       selectedServices.push(selectedServiceList[i]);
-//     }
-// }
-// console.log(selectedServices);
-
-// var _servicesGrid = document.getElementById("servicesGrid");
-
-// Set Services Local Storage
-var selectedServiceList =  JSON.parse(localStorage.getItem("servicesInfoStored"));
-
-// console.log(selectedServiceList)
-
-// Quote Adding Mechanism
-var quotePrice = 0;
+//Getting Customer Data from Local Storage
+var customerDataList = JSON.parse(localStorage.getItem("customerInfoStored"));
+// console.log("Customer info:" + customerDataList._contactFName );
 
 
 //Function That Initializes All Processes
 function initialize() {
-renderSelectedServices();
-  //  initGoogleMaps();
-  // saveToLocalStorage();
-  getLocalStorage();
+getLocalStorage();
+renderServiceLine();
+renderCustomerData();
+renderQuoteLine();
  
 }
 
-function renderSelectedServices(){
-  for (i = 0; i < selectedServiceList.length; i++) {
-    if (selectedServiceList[i].selected === 'true'){
-      console.log("Selected Services: ", selectedServiceList[i].serviceName, selectedServiceList[i].selected);
+
+//Rendering the Services Listing
+function renderServiceLine(){
+  var servicesInfoStored = JSON.parse(localStorage.getItem("servicesInfoStored"));
+  $(".quoteContainer").empty();
+  for (i = 0; i < servicesInfoStored.length; i++){
+    if (servicesInfoStored[i].selected == true){
       
-    } else {
+      // console.log(servicesInfoStored[i].serviceName, servicesInfoStored[i]);
       
+      var serviceLine = $("<div>")
+      .attr("id", "service" + [i] + "Line")
+      .attr("class", "quoteLine")
+      .css("border-width", "5px");
+
+      serviceLine.text(  "    |    " + servicesInfoStored[i].serviceName + " | " + servicesInfoStored[i].userComment  + " | " +  "$" + servicesInfoStored[i].price ).
+      prepend("<img src='Assets/" + servicesInfoStored[i].btnImage + "' style='width: 25px;' />");
+     
+    $(".quoteContainer")
+        .append(serviceLine)
+        .css("font-weight", "bolder");
+
+      finalQuote = finalQuote + servicesInfoStored[i].price;
+      // console.log("Final Quote: ", finalQuote);
+
     }
-}
-console.log("Selected Services: ", selectedServiceList);
+    else {
+      // console.log("Not Selected:" + servicesInfoStored[i].serviceName);
+    }
+  }
+
 };
+//Rendering the Final Quote Line
+function renderQuoteLine(){
+  var servicesInfoStored = JSON.parse(localStorage.getItem("servicesInfoStored"));
+  $(".finalQuoteContainer").empty();
+      var quoteLine = $("<div>")
+      .attr("id", "quote" + [i] + "Line")
+      .attr("class", "quoteLine")
+      .css("border-width", "5px");
 
-// //Function that Saves to Local Storage
-// function saveToLocalStorage() {
-//   localStorage.setItem("servicesInfoStored", JSON.stringify(servicesDataList));
-//   localStorage.setItem("customerInfoStored", JSON.stringify(customerInfoList));
-// }
+      quoteLine.text("Final Quote: " + "$" +finalQuote);
+     
+    $(".finalQuoteContainer")
+        .append(quoteLine)
+        .css("font-weight", "bolder");
 
-//Function that Gets Local Storage
+          };
+    
+
+//Rendering the Customer Information
+function renderCustomerData(){
+var customerDataList = JSON.parse(localStorage.getItem("customerInfoStored"));
+// console.log("Customer info:" + customerDataList._contactFName + " " + customerDataList._contactLName);
+document.getElementById("quoteFName").innerText = customerDataList._contactFName + " "; 
+document.getElementById("quoteLName").innerText = customerDataList._contactLName;
+document.getElementById("quoteEmail").innerText = customerDataList._contactEmail;
+document.getElementById("quotePhone").innerText = customerDataList._contactPhone;
+document.getElementById("quoteStreet").innerText = customerDataList._contactStreet;
+document.getElementById("quoteCity").innerText = customerDataList._contactCity;
+document.getElementById("quoteZip").innerText = customerDataList._contactZip;
+if (customerDataList._contactQuoteComment != null ){
+document.getElementById("quoteComment").innerText = customerDataList._contactQuoteComment;
+} else {
+  document.getElementById("quoteComment").innerText = "";
+}
+}
+
+
+//Getting info. from Local Storage
 function getLocalStorage() {
   // Check if local storage (LS) key exists
   if (localStorage.getItem("servicesInfoStored")) {
     // Then retrieve the associated value from LS
    var servicesDataList = JSON.parse(localStorage.getItem("servicesInfoStored"));
-    // console.log(servicesDataList);
+    
       }
 }
 
 //Function That Allows for the Page to Load first
 $(document).ready(function () {
   initialize();
-  renderSelectedServices();
-});
+ });
