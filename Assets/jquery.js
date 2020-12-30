@@ -28,9 +28,6 @@ var customerInfoList = {
   
 };
 
-
-// var _servicesGrid = document.getElementById("servicesGrid");
-
 // Set Services Local Storage
 var selectedServiceList = [];
 
@@ -43,7 +40,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi1.png",
     userComment: "",
-    selected: "",
+    selected: false,
   },
   {
     serviceName: "Landing Page",
@@ -52,7 +49,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi2.png",
     userComment: "",
-    selected: "",
+    selected: false,
   },
   {
     serviceName: "Weekly Posts",
@@ -61,7 +58,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi3.png",
     userComment: "",
-    selected: "",
+    selected: false,
   },
   {
     serviceName: "Photo Editing and Design",
@@ -70,7 +67,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi4.png",
     userComment: "",
-    selected: "",
+    selected: false,
   },
   {
     serviceName: "Aesthetic Design",
@@ -79,7 +76,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi5.png",
     userComment: "",
-    selected: "",
+    selected: false,
   },
   {
     serviceName: "Competitive Advantage",
@@ -88,7 +85,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi6.png",
     userComment: "",
-    selected: "",
+    selected: false,
   },
   {
     serviceName: "Business Cards",
@@ -97,7 +94,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi7.png",
     userComment: "",
-    selected: "",
+    selected: false,
   },
   {
     serviceName: "Creating Testimonials",
@@ -106,7 +103,7 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi8.png",
     userComment: "",
-    selected: "",
+    selected: false,
   },
   {
     serviceName: "Vision and Mission Statements",
@@ -115,12 +112,10 @@ var servicesDataList = [
     price: 100,
     btnImage: "sushi1.png",
     userComment: "",
-    selected: "",
+    selected: false,
   },
 ];
 
-// Quote Adding Mechanism
-var quotePrice = 0;
 
 function initGoogleMaps() {
   var autocomplete;
@@ -143,7 +138,6 @@ function initialize() {
    renderServiceGrid();
    initGoogleMaps();
   // reviewBuilder();
-  saveToLocalStorage();
   getLocalStorage();
  
 }
@@ -170,7 +164,7 @@ function renderServiceGrid() {
     (function (i) {
       // This button makes the details of the service visible
       servButton.addEventListener("click", function () {
-        console.log("serv" + [i] + "DetailsBox");
+        // console.log("serv" + [i] + "DetailsBox");
         var _servDetails = servicesDataList[i];
         //  console.log(servicesDataList);
         if (
@@ -187,7 +181,7 @@ function renderServiceGrid() {
       // 'Tell Us' button Click to save a user's comments
       var CommentBtn = document.getElementById("serv" + [i] + "CommentBtn");
       CommentBtn.addEventListener("click", function (e) {
-        console.log("commentBtn " + [i]);
+        // console.log("commentBtn " + [i]);
         servicesDataList[i].userComment = document.getElementById(
           "serv" + [i] + "Comment"
         ).value;
@@ -197,28 +191,36 @@ function renderServiceGrid() {
         );
         console.log("tell us button pushed!");
         console.log(servicesDataList[i].userComment);
-        localStorage.setItem("servicesInfoStored", JSON.stringify(servicesDataList));
+       
       });
       // Select service Checkbox to Select a Service
       var servSelectBtn = document.getElementById("serv" + [i] + "Select");
+      // console.log(document.getElementById("serv" + [i] + "Select"), servicesDataList[i].selected)
+      if (servicesDataList[i].selected === "true"){
+        document.getElementById("serv" + [i] + "Select").checked = true;
+       } else if (servicesDataList[i].selected = ""){
+        document.getElementById("serv" + [i] + "Select").checked = false;
+       }
+
       servSelectBtn.addEventListener("click", function (e) {
         var boxChecked = document.getElementById("serv" + [i] + "Select")
           .checked;
-        console.log(boxChecked);
+        // console.log(boxChecked);
         servicesDataList[i].selected = boxChecked;
-        localStorage.setItem("servicesInfoStored", JSON.stringify(servicesDataList));
-        console.log(
-          servicesDataList[i].serviceName +
-            " " +
-            servicesDataList[i].selected +
-            " " +
-            servicesDataList[i].userComment
-        );
+       
+        
+        // console.log(
+        //   servicesDataList[i].serviceName +
+        //     " " +
+        //     servicesDataList[i].selected +
+        //     " " +
+        //     servicesDataList[i].userComment
+        // );
         
       });
     })(i);
   }
-  // console.log(servicesDataList);
+ 
 }
 
 // Get Quote Function
@@ -263,9 +265,10 @@ function getLocalStorage() {
   if (localStorage.getItem("servicesInfoStored")) {
     // Then retrieve the associated value from LS
     servicesDataList = JSON.parse(localStorage.getItem("servicesInfoStored"));
-    console.log(servicesDataList);
+    // console.log(servicesDataList );
       }
 }
+
 
 //Function That Allows for the Page to Load first
 $(document).ready(function () {

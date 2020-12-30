@@ -107,12 +107,14 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 
 .quoteContainer {
     align-self: center;
+    align-content: center;
+    text-align: center;
     width: 90%;
     margin: 5px;
     border-color: black;
     border: 2px;
     border-style: solid;
-    background-color: rgb(172, 212, 27);
+    background-color: white;
 }
 
 .quoteSheet {
@@ -125,14 +127,14 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(11, 54, 40);
 }
 
-.quoteRow {
+.quoteLine {
     align-self: center;
     color: rgb(253, 2, 2);
-    width: 100%;
+    width: 90%;
     margin: 5px;
     border-color: black;
     border-style: solid;
-    background-color: aquamarine;
+    background-color: rgb(255, 255, 255);
 }
 
 .quoteCol {
@@ -150,4 +152,9 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 .quoteImg{
     height: 3em;
     visibility: visible;
+}
+.quoteContactInfo{
+    padding: 2px;
+    margin: 5px;
+
 }
