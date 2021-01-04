@@ -1,9 +1,11 @@
 body {
     background-color: #fef5cc;
+    background-image: url(sushiback.png);
+    background-size: contain;
     text-align: center;
     font-size: medium;
     font-family: 'Times New Roman', Times, serif;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
     
@@ -28,11 +30,11 @@ h1{
 .Header-item{
    
     padding: 10px;
-    color: black;
+    color: white;
     display: inline;
 }
 .Header-link{
-    color: black;
+    color: white;
     float: center;
     display: inline;
     padding-right: 15px;
@@ -113,7 +115,7 @@ color: red;
 
 .servName{
 font-size: 15px;
-color: black;
+color: white;
 font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 }
 
@@ -151,7 +153,7 @@ font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
     border: 5px;
     border-color: black;
     border-style: solid;
-    background-color: #fef5cc;
+    background-color: whiteS;
     padding-bottom: 20px;
 }
 
@@ -165,6 +167,7 @@ font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
     border: 2px;
     border-style: solid;
     background-color: #fef5cc;
+    color: black;
 }
 
 .quoteSheet {
@@ -197,6 +200,7 @@ font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
     border-right: 2px;
     border-width: 5px;
     background-color: rgb(243, 6, 6);
+    color: black;
 }
 
 .quoteImg{

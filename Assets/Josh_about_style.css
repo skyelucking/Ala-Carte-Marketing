@@ -1,6 +1,6 @@
 body {
     background-color: #fef5cc;
-    /* background-image: url(sushiback.png); */
+    background-image: url(sushiback.png);
     background-size: contain;
     text-align: center;
     font-size: medium;
@@ -57,8 +57,8 @@ p{
 
 #aboutDes{
     float: center;
-    padding-left: 500px;
-    padding-right: 500px;
+    padding-left: 300px;
+    padding-right: 300px;
     padding-bottom: 50px;
    
 }

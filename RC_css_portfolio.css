@@ -14,8 +14,10 @@ a{
     width: 50%;
 }
 
+
 .main {
-    background-color: #fef5cc;
+    background-image: url(sushiback.png);
+
 }
 
 .image {
