@@ -139,8 +139,22 @@ function initialize() {
    initGoogleMaps();
   // reviewBuilder();
   getLocalStorage();
+  checkCheckBoxes ();
  
 }
+
+function checkCheckBoxes (){
+  servicesDataList = JSON.parse(localStorage.getItem("servicesInfoStored"));
+  for (i = 0; i < servicesDataList.length; i++) {
+    if (servicesDataList[i].selected !== "" && servicesDataList[i].selected) { 
+    document.getElementById("serv" + [i] + "Select").checked = true;
+   } else if (servicesDataList[i].selected = ""){
+    document.getElementById("serv" + [i] + "Select").checked = false;
+   }
+
+}
+};
+
 
 //Function Creates the Services Grid by Looping Services Array
 function renderServiceGrid() {
@@ -170,11 +184,19 @@ function renderServiceGrid() {
         if (
           (document.getElementById(
             "serv" + [i] + "DetailsBox"
-          ).style.visibility = "hidden")
+          ).style.visibility == "hidden")
         ) {
           document.getElementById(
             "serv" + [i] + "DetailsBox"
           ).style.visibility = "visible";
+        } else if (
+          (document.getElementById(
+            "serv" + [i] + "DetailsBox"
+          ).style.visibility == "visible")
+        ) {
+          document.getElementById(
+            "serv" + [i] + "DetailsBox"
+          ).style.visibility = "hidden";
         }
       });
 
