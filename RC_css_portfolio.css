@@ -1,3 +1,12 @@
+
+.HeaderImg{
+    max-width: 20px;
+    height: 20px;
+}
+a{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
 .column1 {
     display: block;
     margin-left: auto;
@@ -14,37 +23,43 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+  
 }
 .image1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+   
 }
 .image2 {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+  
 }
 .image3 {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+
 }
 .image4 {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-}
+    }
 .image5 {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+
 }
+
 
 .biz1 {
     text-align: center;
@@ -55,7 +70,8 @@
 }
 
 .biz1info {
- border-style: dotted;
+    
+ border-style: solid;
  text-align: center;
  margin-left: auto;
  margin-right: auto;
@@ -134,4 +150,17 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+.footNote{
+    background-color:black;
+    float: center;
+    color: white;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.regImg{
+    max-width: 30px;
+    max-height: 30px;
 }
