@@ -1,9 +1,44 @@
 body {
     background-color: #fef5cc;
+    background-image: url(sushiback.png);
+    background-size: contain;
     text-align: center;
     font-size: medium;
     font-family: 'Times New Roman', Times, serif;
-    color: rgb(0, 0, 0);
+    color: white;
+}
+
+    
+}
+.Header{
+    background-color: #fef5cc;
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    
+    
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px
+
+}
+.HeaderImg{
+    max-width: 20px;
+    height: 20px;
+}
+.Header-item{
+   
+    padding: 10px;
+    color: white;
+    display: inline;
+}
+.Header-link{
+    color: white;
+    float: center;
+    display: inline;
+    padding-right: 15px;
+    padding-bottom: 0px;
 }
 
 
@@ -12,6 +47,7 @@ body {
     text-align: center;
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: red;
 }
 
 #market {
@@ -19,13 +55,16 @@ body {
  text-align: center;
 font-weight: bolder;
 font-family: Georgia, 'Times New Roman', Times, serif;
+color: red;
 }
 
 #comingSoon {
     font-size: 30px;
     text-align: center;
     font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    color: red;
+    padding-bottom: 30px;
 }
 
 .hideBtn{
@@ -60,34 +99,41 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 
 .servKey{
     visibility: hidden;
+    
 
 }
 .servBox{
-
+    
 }
 
 .servImg{
+  
 
 }
-.serKey{
 
-}
+
 
 .servName{
-
+font-size: 15px;
+color: white;
+font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 }
 
 .serveDetailsBox{
+    font-weight: bold;
+   
     
 
 }
 
 .servDesc{
+    font-family: 'Times New Roman', Times, serif;
+    
 
 }
 
 .servPrice{
-
+    
 }
 
 .servComment{
@@ -106,7 +152,9 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 5px;
     border: 5px;
     border-color: black;
-    border-style: dotted;
+    border-style: solid;
+    background-color: whiteS;
+    padding-bottom: 20px;
 }
 
 .quoteContainer {
@@ -118,7 +166,8 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     border-color: black;
     border: 2px;
     border-style: solid;
-    background-color: white;
+    background-color: #fef5cc;
+    color: black;
 }
 
 .quoteSheet {
@@ -151,6 +200,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     border-right: 2px;
     border-width: 5px;
     background-color: rgb(243, 6, 6);
+    color: black;
 }
 
 .quoteImg{
@@ -162,39 +212,14 @@ font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 5px;
 
 }
-=======
-/* quote page */
-.getQuoteBox{
-
+.footNote{
+    background-color:black;
+    float: center;
+    color: white;
+    padding-bottom: 10px;
+    
 }
-.getQuoteDesc{
-
+.regImg{
+    max-width: 10px;
+    max-height: 10px;
 }
-.quoteContactInfo{
-
-}
-
-.getQuoteComment{
-
-}
-/* /* .quotePhone{
-
-}
-.quoteStreet{
-
-}
-.quoteCity{
-
-}
-.latitude_input{
-
-}
-.lonitude_input{ */
-
-}
-/* .quoteZip{
-
-}
-.quoteComment{ */
-
- UI
