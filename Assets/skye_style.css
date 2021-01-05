@@ -5,7 +5,7 @@ body {
     text-align: center;
     font-size: medium;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: red;
 }
 
     
@@ -15,12 +15,14 @@ body {
     padding: 20px;
     padding-bottom: 0px;
     padding-top: 5px;
+    color: white;
     
     
 }
 h1{
     font-family: 'Times New Roman', Times, serif;
-    font-size: 50px
+    font-size: 50px;
+    color: white;
 
 }
 .HeaderImg{
@@ -86,11 +88,13 @@ color: red;
 .contactNameInput {
     width: 10em;
     margin: 5px;
+    color: black;
 }
 
 .contactInput {
     width: 20em;
     margin: 5px;
+    color: black;
 }
 
 .textarea {
@@ -121,7 +125,9 @@ font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 
 .serveDetailsBox{
     font-weight: bold;
-   
+   background-color:red;
+   opacity: 70%;
+   color: white;
     
 
 }
@@ -132,17 +138,7 @@ font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 
 }
 
-.servPrice{
-    
-}
 
-.servComment{
-
-}
-
-.servSelect{
-    
-}
 
 
 /* Styles for the Quote Page */
@@ -153,7 +149,7 @@ font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
     border: 5px;
     border-color: black;
     border-style: solid;
-    background-color: whiteS;
+    background-color: white;
     padding-bottom: 20px;
 }
 
@@ -161,19 +157,19 @@ font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
     align-self: center;
     align-content: center;
     text-align: center;
-    width: 90%;
+    width: 100%;
     margin: 5px;
     border-color: black;
-    border: 2px;
+    border: 0px;
     border-style: solid;
-    background-color: #fef5cc;
+ 
     color: black;
 }
 
 .quoteSheet {
     align-self: center;
     color: black;
-    width: 90%;
+    width: 100%;
     margin: 5px;
     border-color: black;
     border-style: solid;
@@ -206,10 +202,13 @@ font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 .quoteImg{
     height: 3em;
     visibility: visible;
+    color: black;
 }
 .quoteContactInfo{
     padding: 2px;
     margin: 5px;
+    color: black; 
+
 
 }
 .footNote{
@@ -222,4 +221,11 @@ font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 .regImg{
     max-width: 10px;
     max-height: 10px;
+}
+.ContactInfoText{
+    padding: 2px;
+    margin: 5px;
+    color: black; 
+
+
 }

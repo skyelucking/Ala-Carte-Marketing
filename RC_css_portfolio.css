@@ -6,6 +6,7 @@
 a{
     font-family: 'Times New Roman', Times, serif;
     font-size: 50px;
+    color: white;
 }
 .column1 {
     display: block;
@@ -16,7 +17,9 @@ a{
 
 
 .main {
-    background-image: url(sushiback.png);
+    background-color: #fef5cc;
+    background-image: url(Assets/sushiback.png);
+    background-size: contain;
 
 }
 
@@ -68,7 +71,9 @@ a{
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
-   
+    font-size: 15px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 }
 
 .biz1info {
@@ -77,6 +82,10 @@ a{
  text-align: center;
  margin-left: auto;
  margin-right: auto;
+ font-weight: bold;
+ background-color:red;
+ opacity: 70%;
+ color: white
 }
 
 .biz2 {
@@ -84,14 +93,19 @@ a{
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
-    
-}
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+} 
 
 .biz2info {
-    border-style: dotted;
+    border-style: solid;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+   font-weight: bold;
+    background-color:red;
+ opacity: 70%;
+ color: white
 }
 
 .biz3 {
@@ -99,44 +113,65 @@ a{
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 
 }
 
 .biz3info {
-    border-style: dotted;
+    border-style: solid;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+    opacity: 70%;
+     color: white
 }
+
 
 .biz4 {
     text-align: center;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 
 }
 
 .biz4info {
-    border-style: dotted;
+    border-style: solid;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+    opacity: 70%;
+    color: white
 }
+
 
 .biz5 {
     text-align: center;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
     
 }
 
 .biz5info {
-    border-style: dotted;
+    border-style: solid;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+     opacity: 70%;
+    color: white
+
 }
 
 .biz6 {
@@ -144,14 +179,21 @@ a{
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
 
 }
 
 .biz6info {
-    border-style: dotted;
+    border-style: solid;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+ opacity: 70%;
+ color: white
+ 
 }
 
 
@@ -165,4 +207,10 @@ a{
 .regImg{
     max-width: 30px;
     max-height: 30px;
+}
+.serveDetailsBox{
+    font-weight: bold;
+   background-color:red;
+   opacity: 70%;
+   color: white;
 }
