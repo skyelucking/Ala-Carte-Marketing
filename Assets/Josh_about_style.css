@@ -1,7 +1,5 @@
-body {
-    background-color: #fef5cc;
-    background-image: url(sushiback.png);
-    background-size: contain;
+aboutBody {
+   
     text-align: center;
     font-size: medium;
     font-family: 'Times New Roman', Times, serif;
@@ -55,11 +53,19 @@ p{
     font-weight: bold;
 }
 
-#aboutDes{
+.aboutDes {
     float: center;
     padding-left: 300px;
     padding-right: 300px;
     padding-bottom: 50px;
+    border-style: solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+    opacity: 70%;
+    color: white
    
 }
 h2{

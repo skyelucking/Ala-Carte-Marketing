@@ -8,10 +8,7 @@ body {
     color: red;
 }
 
-    
-}
 .Header{
-    background-color: #fef5cc;
     padding: 20px;
     padding-bottom: 0px;
     padding-top: 5px;
@@ -43,45 +40,6 @@ h1{
     padding-bottom: 0px;
 }
 
-
-#eatAllyouCan {
-    font-size: 35px;
-    text-align: center;
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: red;
-}
-
-#market {
- font-size: 55px;
- text-align: center;
-font-weight: bolder;
-font-family: Georgia, 'Times New Roman', Times, serif;
-color: red;
-}
-
-#comingSoon {
-    font-size: 30px;
-    text-align: center;
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif; 
-    color: red;
-    padding-bottom: 30px;
-}
-
-.hideBtn{
-    align-self: center;
-    align-content: center;
-    color: black;
-    padding: 1px;
-    border: 5px;
-    border-color: black;
-    border-style: double;
-    max-width: 4em;
-    background-color: rgb(253, 253, 253);
-    font-weight: bolder;
-    
-}
 
 
 
