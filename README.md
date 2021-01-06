@@ -10,27 +10,27 @@ Ala-Carte-Marketing aligns a business with the exact marketing services they nee
 ​
 <h1>Screenshot</h1>
 Autocomplete Search
-<img src="Assets/mainpageshot.jpg"><br>
+<img src="./Assets/mainpageshot.jpg"><br>
 Main page displays icons where a customer can choose the products they like. 
 <br>
 <br>
-<img src="Assets/icon1.jpg"><br>
+<img src="./Assets/icon1.jpg"><br>
 When you click on a icon a comment box and a button to select if you would like this service will appear. 
 <br>
 <br>
-<img src="Assets/quoteimage.jpg"><br>
+<img src="./Assets/quoteimage.jpg"><br>
 Once you have selected your services, user will need to fill out the get a quote field. We used an API which auto fills using the Google Places Autocomplete API
 ​<br>
 <br>
-<img src="Assets/quotefilled.jpg"><br>
+<img src="./Assets/quotefilled.jpg"><br>
 Once you hit GET QUOTE you will be directed to the Quote Page where it will generate the services you selected, showing your total. It will also papulate back the infomation that the user entered. 
 <br>
 <br>
-<img src="Assets/Portfoliopage.jpg"><br>
+<img src="./Assets/Portfoliopage.jpg"><br>
 We created a Portfolio Page which the user can look at the most recent clients the firm has had and helped. For this we used the Unsplash API, its an API where it takes an image from a collection of images that a user has uploaded. 
 <br>
 <br>
-​<img src="Assets/aboutmepic.jpg"><br>
+​<img src="./Assets/aboutmepic.jpg"><br>
 Lastly we created an About me Page
 
 ​<br>
