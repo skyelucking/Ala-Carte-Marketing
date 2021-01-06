@@ -155,7 +155,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 .finalQuoteLine {
     align-self: center;
     color: black;
-    width: 80%;
+    width: 60%;
     margin: 5px;
     border-color: black;
     border-style: solid;
@@ -168,7 +168,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 .quoteLine {
     align-self: center;
     color: rgb(253, 2, 2);
-    width: 80%;
+    width: 60%;
     margin: 5px;
     border-color: black;
     border-style: solid;
