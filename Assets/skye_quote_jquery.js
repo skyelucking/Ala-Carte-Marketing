@@ -32,13 +32,14 @@ getLocalStorage();
 renderServiceLine();
 renderCustomerData();
 renderQuoteLine();
+renderSlowRoll();
 
- 
 }
 
 
 //Rendering the Services Listing
 function renderServiceLine(){
+  if (localStorage.getItem("servicesInfoStored")) {
   var servicesInfoStored = JSON.parse(localStorage.getItem("servicesInfoStored"));
   $(".quoteContainer").empty();
   for (i = 0; i < servicesInfoStored.length; i++){
@@ -63,13 +64,14 @@ function renderServiceLine(){
 
     }
     else {
-      // console.log("Not Selected:" + servicesInfoStored[i].serviceName);
+      
     }
   }
-
+  }
 };
 //Rendering the Final Quote Line
 function renderQuoteLine(){
+  if (localStorage.getItem("servicesInfoStored")) {
   var servicesInfoStored = JSON.parse(localStorage.getItem("servicesInfoStored"));
   $(".finalQuoteContainer").empty();
       var quoteLine = $("<div>")
@@ -83,11 +85,36 @@ function renderQuoteLine(){
         .append(quoteLine)
         .css("font-weight", "bolder");
 
-          };
+          }};
+
+//Rendering the Slow Your
+function renderSlowRoll(){
+  if (localStorage.getItem("servicesInfoStored") === null) {
+    console.log("no data")
+       var SlowRoll = $("<div>")
+      .attr("id", "SlowRoll")
+      .attr("class", "SlowRoll")
+      .css("border-width", "5px");
+
+      SlowRoll.text("").
+      prepend("<a href='index.html'><img src='Assets/slowyourroll.png' /></a>");;
+     
+    $(".slowYourRollContainer")
+        .append(SlowRoll)
+        .css("font-weight", "bolder");
+
+        document.getElementById("contactInfoBox").style.visibility = "hidden";
+
+
+          }
+        };
+
+          
     
 
 //Rendering the Customer Information
 function renderCustomerData(){
+  if (localStorage.getItem("customerInfoStored")) {
 var customerDataList = JSON.parse(localStorage.getItem("customerInfoStored"));
 // console.log("Customer info:" + customerDataList._contactFName + " " + customerDataList._contactLName);
 document.getElementById("quoteFName").innerText = customerDataList._contactFName + " "; 
@@ -101,7 +128,7 @@ if (customerDataList._contactQuoteComment != null ){
 document.getElementById("quoteComment").innerText = customerDataList._contactQuoteComment;
 } else {
   document.getElementById("quoteComment").innerText = "";
-}
+}}
 }
 
 
