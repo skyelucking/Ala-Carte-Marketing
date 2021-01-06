@@ -7,7 +7,7 @@
 // put the function that kicks off the app inside it
 
 //City Search Elements
-var $searchInput = $("#contactCi");
+var $searchInput = $("#contactCity");
 var $latitudeInput = $("#latitude_input");
 var $longitudeInput = $("#longitude_input");
 var longData = "";
@@ -135,15 +135,17 @@ function initGoogleMaps() {
 
 //Function That Initializes All Processes
 function initialize() {
-   renderServiceGrid();
-   initGoogleMaps();
-  // reviewBuilder();
+  renderServiceGrid();
+  initGoogleMaps();
   getLocalStorage();
   checkCheckBoxes ();
- 
+  checkUserComments();
+  checkContact();
 }
 
+//Function That Checks Boxes on Previously Selected Services
 function checkCheckBoxes (){
+  if (localStorage.getItem("servicesInfoStored")){
   servicesDataList = JSON.parse(localStorage.getItem("servicesInfoStored"));
   for (i = 0; i < servicesDataList.length; i++) {
     if (servicesDataList[i].selected !== "" && servicesDataList[i].selected) { 
@@ -153,6 +155,42 @@ function checkCheckBoxes (){
    }
 
 }
+}
+};
+
+//Function That Checks Comments on Previously Commented On Services
+function checkUserComments (){
+  if (localStorage.getItem("servicesInfoStored")){
+  servicesDataList = JSON.parse(localStorage.getItem("servicesInfoStored"));
+  for (i = 0; i < servicesDataList.length; i++) {
+    if (servicesDataList[i].userComment !== "") { 
+    document.getElementById("serv" + [i] + "Comment").value = servicesDataList[i].userComment;
+   } else if (servicesDataList[i].selected = ""){
+    document.getElementById("serv" + [i] + "Comment").placeholder = "Service User Comment!";
+   }
+
+}}
+};
+
+function checkContact(){
+  if (localStorage.getItem("customerInfoStored")) {
+    // Then retrieve the associated value from LS
+    customerDataList = JSON.parse(localStorage.getItem("customerInfoStored"));
+    document.getElementById("contactFName").value = customerDataList._contactFName;
+    document.getElementById("contactLName").value = customerDataList._contactLName; 
+    document.getElementById("contactEmail").value = customerDataList._contactEmail;
+    document.getElementById("contactPhone").value = customerDataList._contactPhone;
+    document.getElementById("contactStreet").value = customerDataList._contactStreet;
+    document.getElementById("contactCity").value = customerDataList._contactCity;
+    document.getElementById("contactZip").value = customerDataList._contactZip;
+    if (customerDataList._contactQuoteComment !== ""){
+    document.getElementById("getQuoteComment").value = customerDataList._contactQuoteComment;
+  } else {
+    document.getElementById("getQuoteComment").placeholder = "Cat got your tongue?";
+  }
+    console.log(customerDataList );
+      }
+
 };
 
 
@@ -207,12 +245,9 @@ function renderServiceGrid() {
         servicesDataList[i].userComment = document.getElementById(
           "serv" + [i] + "Comment"
         ).value;
-        console.log(
-          "comment: ",
-          document.getElementById("serv" + [i] + "Comment").value
-        );
-        console.log("tell us button pushed!");
-        console.log(servicesDataList[i].userComment);
+        localStorage.setItem("servicesInfoStored", JSON.stringify(servicesDataList));;
+
+        
        
       });
       // Select service Checkbox to Select a Service
@@ -231,19 +266,14 @@ function renderServiceGrid() {
         servicesDataList[i].selected = boxChecked;
        
         
-        // console.log(
-        //   servicesDataList[i].serviceName +
-        //     " " +
-        //     servicesDataList[i].selected +
-        //     " " +
-        //     servicesDataList[i].userComment
-        // );
-        
+               
       });
     })(i);
   }
  
 }
+
+
 
 // Get Quote Function
 var getQuoteBtn = document.getElementById("getQuoteBtn");
@@ -273,6 +303,7 @@ getQuoteBtn.addEventListener("click", function () {
     "getQuoteComment"
   ).value;
   saveToLocalStorage();
+  window.location.href = "Quote.html";
 });
 
 //Function that Saves to Local Storage
