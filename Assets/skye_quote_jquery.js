@@ -28,9 +28,11 @@ var customerDataList = JSON.parse(localStorage.getItem("customerInfoStored"));
 //Function That Initializes All Processes
 function initialize() {
 getLocalStorage();
+// initGoogleMaps();
 renderServiceLine();
 renderCustomerData();
 renderQuoteLine();
+
  
 }
 
@@ -72,7 +74,7 @@ function renderQuoteLine(){
   $(".finalQuoteContainer").empty();
       var quoteLine = $("<div>")
       .attr("id", "quote" + [i] + "Line")
-      .attr("class", "quoteLine")
+      .attr("class", "finalQuoteLine")
       .css("border-width", "5px");
 
       quoteLine.text("Final Quote: " + "$" +finalQuote);
@@ -111,6 +113,24 @@ function getLocalStorage() {
    var servicesDataList = JSON.parse(localStorage.getItem("servicesInfoStored"));
     
       }
+}
+
+function initGoogleMaps() {
+  var city = document.getElementById("contactCity");
+  var autocomplete;
+  autocomplete = new google.maps.places.Autocomplete(
+    city,
+    { types: ["geocode"] });
+  // autocomplete = "Sedona";
+  
+  google.maps.event.addListener(autocomplete, "place_changed", function () {
+    var near_place = autocomplete.getPlace();
+    console.log(near_place);
+    $latitudeInput.value = near_place.geometry.location.lat();
+    customerInfoList._contactLat = near_place.geometry.location.lat();
+    customerInfoList._contactLong = near_place.geometry.location.lng();
+    cityName = near_place.address_components[0].short_name;
+  });
 }
 
 //Function That Allows for the Page to Load first
