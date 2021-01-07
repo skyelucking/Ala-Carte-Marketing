@@ -7,24 +7,24 @@ Ala-Carte-Marketing aligns a business with the exact marketing services they nee
 
 ​
 # Screenshots
-<img src="https://github.com/skyelucking/Ala-Carte-Marketing/blob/readdme/Assets/Mainpageshot.JPG?raw=true">
+
+![Screenshot 1](Assets/Mainpageshot.JPG)
 Main page displays icons where a customer can choose the products they like. 
 
-<img src="https://github.com/skyelucking/Ala-Carte-Marketing/blob/readdme/Assets/icon1.JPG?raw=true">
-
+![Screenshot 2](Assets/icon1.JPG)   
 When you click on a icon a comment box and a button to select if you would like this service will appear. 
 
-<img src="https://github.com/skyelucking/Ala-Carte-Marketing/blob/readdme/Assets/quoteimage.JPG?raw=true">
+![Screenshot 3](Assets/quoteimage.JPG)
 Once you have selected your services, user will need to fill out the get a quote field. We used an API which auto fills using the Google Places Autocomplete API
 
-<img src="https://github.com/skyelucking/Ala-Carte-Marketing/blob/readdme/Assets/quotefilled.JPG?raw=true">
+![Screenshot 4](Assets/quotefilled.JPG)
 Once you hit GET QUOTE you will be directed to the Quote Page where it will generate the services you selected, showing your total. It will also papulate back the infomation that the user entered. 
 
-<img src="https://github.com/skyelucking/Ala-Carte-Marketing/blob/readdme/Assets/Portfoliopage.JPG?raw=true">
-
+![Screenshot 5](Assets/portfoliopage.JPG)
 We created a Portfolio Page which the user can look at the most recent clients the firm has had and helped. For this we used the Unsplash API, its an API where it takes an image from a collection of images that a user has uploaded. 
 
-<img src="https://github.com/skyelucking/Ala-Carte-Marketing/blob/readdme/Assets/aboutmepic.JPG?raw=true">
+
+![Screenshot 6](Assets/aboutmepic.JPG)
 
 Lastly we created an About me Page
 
@@ -38,4 +38,6 @@ Lastly we created an About me Page
 
 # Project Joke
 Q: What did Sushi A say to Sushi B  
+
 ​A: Wasabi
+
