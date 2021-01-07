@@ -7,6 +7,7 @@ Ala-Carte-Marketing aligns a business with the exact marketing services they nee
 
 ​
 # Screenshots
+
 ![Screenshot 1](Assets/Mainpageshot.JPG)
 Main page displays icons where a customer can choose the products they like. 
 
@@ -24,6 +25,7 @@ We created a Portfolio Page which the user can look at the most recent clients t
 
 
 ![Screenshot 6](Assets/aboutmepic.JPG)
+
 Lastly we created an About me Page
 
 # Links for the Deployed Page, and the Github Repo
@@ -36,4 +38,6 @@ Lastly we created an About me Page
 
 # Project Joke
 Q: What did Sushi A say to Sushi B  
+
 ​A: Wasabi
+
