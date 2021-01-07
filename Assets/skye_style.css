@@ -1,0 +1,194 @@
+body {
+    background-color: #fef5cc;
+    background-image: url(sushiback.png);
+    background-size: contain;
+    text-align: center;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
+
+<<<<<<< HEAD
+    
+
+=======
+>>>>>>> be401dcea6d66c90df5c86fd23290f3132846b55
+.Header{
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    color: white;
+    
+    
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: white;
+
+}
+.HeaderImg{
+    max-width: 20px;
+    height: 20px;
+}
+.Header-item{
+   
+    padding: 10px;
+    color: white;
+    display: inline;
+}
+.Header-link{
+    color: white;
+    float: center;
+    display: inline;
+    padding-right: 15px;
+    padding-bottom: 0px;
+}
+
+
+
+
+.contactNameInput {
+    width: 10em;
+    margin: 5px;
+    color: black;
+}
+
+.contactInput {
+    width: 20em;
+    margin: 5px;
+    color: black;
+}
+
+.textarea {
+    line-height: 4;
+}
+
+.servKey{
+    visibility: hidden;
+    
+
+}
+.servBox{
+    
+}
+
+.servImg{
+  
+
+}
+
+
+
+.servName{
+font-size: 15px;
+color: white;
+font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+}
+
+.serveDetailsBox{
+    font-weight: bold;
+   background-color:red;
+   opacity: 70%;
+   color: white;
+    
+
+}
+
+.servDesc{
+    font-family: 'Times New Roman', Times, serif;
+    
+
+}
+
+
+
+
+/* Styles for the Quote Page */
+
+
+.getQuoteBox{
+    padding: 5px;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+.quoteContainer {
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    margin: 5px;
+    border-color: black;
+    border: 0px;
+    border-style: solid;
+ 
+    color: black;
+}
+
+.quoteSheet {
+    align-self: center;
+    color: black;
+    width: 100%;
+    margin: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: rgb(11, 54, 40);
+}
+
+.quoteLine {
+    align-self: center;
+    color: rgb(253, 2, 2);
+    width: 90%;
+    margin: 5px;
+    border-color: black;
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+}
+
+.quoteCol {
+   
+    align-content: left;
+    color: rgb(10, 10, 10);
+    margin: 5px;
+    border-color: rgb(94, 7, 102);
+    border-style: solid;
+    border-right: 2px;
+    border-width: 5px;
+    background-color: rgb(243, 6, 6);
+    color: black;
+}
+
+.quoteImg{
+    height: 3em;
+    visibility: visible;
+    color: black;
+}
+.quoteContactInfo{
+    padding: 2px;
+    margin: 5px;
+    color: black; 
+
+
+}
+.footNote{
+    background-color:black;
+    float: center;
+    color: white;
+    padding-bottom: 10px;
+    
+}
+.regImg{
+    max-width: 10px;
+    max-height: 10px;
+}
+.ContactInfoText{
+    padding: 2px;
+    margin: 5px;
+    color: black; 
+
+
+}

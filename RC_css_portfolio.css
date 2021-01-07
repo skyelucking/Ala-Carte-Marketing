@@ -1,0 +1,227 @@
+
+.HeaderImg{
+    max-width: 20px;
+    height: 20px;
+}
+
+.column1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+.main {
+    
+    background-image: url(Assets/sushiback.png);
+    background-size: contain;
+
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  
+}
+.image1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+   
+}
+.image2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  
+}
+.image3 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.image4 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    }
+.image5 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+
+.biz1 {
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+}
+
+.biz1info {
+ padding: 10px;   
+ border-style: solid;
+ text-align: center;
+ margin-left: auto;
+ margin-right: auto;
+ font-weight: bold;
+ background-color:red;
+ opacity: 70%;
+ color: white
+ 
+}
+
+.biz2 {
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+} 
+
+.biz2info {
+    border-style: solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+   font-weight: bold;
+    background-color:red;
+    opacity: 70%;
+    color: white
+}
+
+.biz3 {
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+
+}
+
+.biz3info {
+    border-style: solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+    opacity: 70%;
+     color: white
+}
+
+
+.biz4 {
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+
+}
+
+.biz4info {
+    border-style: solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+    opacity: 70%;
+    color: white
+}
+
+
+.biz5 {
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+    
+}
+
+.biz5info {
+    border-style: solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+     opacity: 70%;
+    color: white
+
+}
+
+.biz6 {
+    text-align: center;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+
+}
+
+.biz6info {
+    border-style: solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+    opacity: 70%;
+    color: white
+ 
+}
+
+.bizinfo {
+    padding: 10px;   
+    border-style: solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+    opacity: 70%;
+    color: white
+    
+   }
+
+
+.footNote{
+    background-color:black;
+    float: center;
+    color: white;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.regImg{
+    max-width: 30px;
+    max-height: 30px;
+}
+.serveDetailsBox{
+   font-weight: bold;
+   background-color:red;
+   opacity: 70%;
+   color: white;
+   font-size: 16px;
+}

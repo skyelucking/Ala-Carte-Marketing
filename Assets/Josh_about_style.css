@@ -1,0 +1,87 @@
+aboutBody {
+   
+    text-align: center;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color:white;
+}
+
+.Header{
+    
+    padding: 20px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    
+    
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px
+
+}
+.HeaderImg{
+    max-width: 20px;
+    height: 20px;
+}
+.Header-item{
+   
+    padding: 10px;
+    color: black;
+    display: inline;
+}
+.Header-link{
+    color: white;
+    float: center;
+    display: inline;
+    padding-right: 15px;
+    padding-bottom: 0px;
+}
+.aboutImg{
+    max-width: 150px;
+    height: 125px;
+    border-radius: 50%;
+    float: center
+    ;
+    
+}
+p{
+    
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.aboutDes {
+    float: center;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-bottom: 50px;
+    border-style: solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background-color:red;
+    opacity: 70%;
+    color: white
+   
+}
+h2{
+    float: center;
+    font-size: 45px;
+    font: outline;
+}
+
+.footNote{
+    background-color:black;
+    float: center;
+    color: white;
+    padding-bottom: 10px;
+    
+}
+.regImg{
+    max-width: 200px;
+    max-height: 20px;
+}
