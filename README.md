@@ -19,7 +19,7 @@ Once you have selected your services, user will need to fill out the get a quote
 ![Screenshot 4](Assets/quotefilled.JPG)
 Once you hit GET QUOTE you will be directed to the Quote Page where it will generate the services you selected, showing your total. It will also papulate back the infomation that the user entered. 
 
-![Screenshot 5](Assets/portfoliopage.JPG)
+![Screenshot 5](Assets/Portfoliopage.JPG)
 We created a Portfolio Page which the user can look at the most recent clients the firm has had and helped. For this we used the Unsplash API, its an API where it takes an image from a collection of images that a user has uploaded. 
 
 
