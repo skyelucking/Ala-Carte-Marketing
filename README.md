@@ -7,7 +7,7 @@ Ala-Carte-Marketing aligns a business with the exact marketing services they nee
 
 ​
 # Screenshots
-![Screenshot 1](Assets/mainpageshot.JPG)
+![Screenshot 1](Assets/Mainpageshot.JPG)
 Main page displays icons where a customer can choose the products they like. 
 
 ![Screenshot 2](Assets/icon1.JPG)   
